@@ -12,6 +12,9 @@ module.exports = {
       tokenable_type: {
         type: Sequelize.STRING
       },
+      tokenable_id: {
+        type: Sequelize.STRING
+      },
       table_name: {
         type: Sequelize.STRING
       },

@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     nim_id: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'user',
+    modelName: 'users',
   });
   return user;
 };
