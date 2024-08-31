@@ -12,9 +12,6 @@ module.exports = {
       nama_matkul: {
         type: Sequelize.STRING
       },
-      max_siswa: {
-        type: Sequelize.BOOLEAN
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

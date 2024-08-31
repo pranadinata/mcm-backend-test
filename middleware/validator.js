@@ -92,11 +92,18 @@ const rencana_studi_detail = [
 ];
 
 const mata_kuliah_create = [
-    
+    check('nama_matkul').notEmpty().isString().isLength({ max: 100}),
 ];
-const mata_kuliah_update = [];
-const mata_kuliah_delete = [];
-const mata_kuliah_detail = [];
+const mata_kuliah_update = [
+    check('matkul_id').notEmpty().isUUID([4]).withMessage('Mata kuliah id harus UUID dan tidak boleh kosong'),
+    check('nama_matkul').notEmpty().isString().isLength({ max: 100}),
+];
+const mata_kuliah_delete = [
+    check('matkul_id').notEmpty().isUUID([4]).withMessage('Mata kuliah id harus UUID dan tidak boleh kosong'),
+];
+const mata_kuliah_detail = [
+    check('id').notEmpty().isUUID([4]).withMessage('Mata kuliah id harus UUID dan tidak boleh kosong'),
+];
 
 
 module.exports = {

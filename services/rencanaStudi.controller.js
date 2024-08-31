@@ -11,13 +11,14 @@ async function index(req, res){
             const {page, size, sort} = req.query;
             const limit = size ? +size : 10; // Jumlah data per halaman
             const offset = page ? (page - 1) * limit : 0; // Menghitung offset, asumsi halaman dimulai dari 1
-            const order = sort ? [sort.split(',')] : [['createdAt', 'DESC']]; // Pengurutan default
+            const order = sort ? [sort.split(',')] : [['updatedAt', 'DESC']]; // Pengurutan default
     
             // Ambil data dari database dengan paginasi dan pengurutan
             const {count, rows} = await rencana_studi.findAndCountAll({
                 limit,
                 offset,
                 order,
+                distinct: true,
                 include: [{
                     model: mahasiswa,
                     as: 'Mahasiswa',

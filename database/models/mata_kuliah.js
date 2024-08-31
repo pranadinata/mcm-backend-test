@@ -20,7 +20,6 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
     },
     nama_matkul: DataTypes.STRING,
-    max_siswa: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'mata_kuliah',
