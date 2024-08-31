@@ -26,7 +26,6 @@ module.exports = (sequelize, DataTypes) => {
     alamat: DataTypes.TEXT,
     semester: DataTypes.INTEGER,
     jurusan: DataTypes.STRING,
-    max_matkul: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'mahasiswa',

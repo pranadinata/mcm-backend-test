@@ -91,6 +91,14 @@ const rencana_studi_detail = [
     check('id').notEmpty().isUUID([4]).withMessage('Rencana studi id harus UUID dan tidak boleh kosong'),
 ];
 
+const mata_kuliah_create = [
+    
+];
+const mata_kuliah_update = [];
+const mata_kuliah_delete = [];
+const mata_kuliah_detail = [];
+
+
 module.exports = {
     login_check,
     mahasiswa_create,
@@ -101,4 +109,8 @@ module.exports = {
     rencana_studi_update,
     rencana_studi_delete,
     rencana_studi_detail,
+    mata_kuliah_create,
+    mata_kuliah_update,
+    mata_kuliah_delete,
+    mata_kuliah_detail,
 };

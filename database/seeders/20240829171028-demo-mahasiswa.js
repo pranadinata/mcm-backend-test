@@ -12,7 +12,6 @@ module.exports = {
         alamat: 'Jl. ABC No 80',
         semester: 2016,
         jurusan: 'Teknik Informatika',
-        max_matkul: false,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -23,7 +22,6 @@ module.exports = {
         alamat: 'Jl. ABC No 80',
         semester: 2016,
         jurusan: 'Teknik Informatika',
-        max_matkul: false,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -34,7 +32,6 @@ module.exports = {
         alamat: 'Jl. ABC No 80',
         semester: 2016,
         jurusan: 'Teknik Informatika',
-        max_matkul: false,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -45,7 +42,6 @@ module.exports = {
         alamat: 'Jl. ABC No 80',
         semester: 2016,
         jurusan: 'Teknik Informatika',
-        max_matkul: false,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -56,7 +52,6 @@ module.exports = {
         alamat: 'Jl. ABC No 80',
         semester: 2016,
         jurusan: 'Teknik Informatika',
-        max_matkul: false,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -67,7 +62,6 @@ module.exports = {
         alamat: 'Jl. ABC No 80',
         semester: 2016,
         jurusan: 'Teknik Informatika',
-        max_matkul: false,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -78,7 +72,6 @@ module.exports = {
         alamat: 'Jl. ABC No 80',
         semester: 2016,
         jurusan: 'Teknik Informatika',
-        max_matkul: false,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -89,7 +82,6 @@ module.exports = {
         alamat: 'Jl. ABC No 80',
         semester: 2016,
         jurusan: 'Teknik Informatika',
-        max_matkul: false,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -100,7 +92,6 @@ module.exports = {
         alamat: 'Jl. ABC No 80',
         semester: 2016,
         jurusan: 'Teknik Informatika',
-        max_matkul: false,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -111,7 +102,6 @@ module.exports = {
         alamat: 'Jl. ABC No 80',
         semester: 2016,
         jurusan: 'Teknik Informatika',
-        max_matkul: false,
         createdAt: new Date(),
         updatedAt: new Date()
       },

@@ -67,7 +67,6 @@ async function create(req, res){
                 alamat: alamat,
                 semester: semester,
                 jurusan: jurusan,
-                max_matkul: false,
             }).then((mahasiswa) =>{
       
                if(mahasiswa){

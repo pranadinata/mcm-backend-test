@@ -8,35 +8,30 @@ module.exports = {
     await queryInterface.bulkInsert('mata_kuliahs', [{
       id: uuidv4(),
       nama_matkul: 'Basis Data',
-      max_siswa: false,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
       id: uuidv4(),
       nama_matkul: 'Pemograman Berbasis Object',
-      max_siswa: false,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
       id: uuidv4(),
       nama_matkul: 'Algoritma Pemograman',
-      max_siswa: false,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
       id: uuidv4(),
       nama_matkul: 'Pengantar Manajemen',
-      max_siswa: false,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
       id: uuidv4(),
       nama_matkul: 'General English',
-      max_siswa: false,
       createdAt: new Date(),
       updatedAt: new Date()
     },

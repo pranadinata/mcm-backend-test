@@ -25,9 +25,6 @@ module.exports = {
       jurusan: {
         type: Sequelize.STRING
       },
-      max_matkul: {
-        type: Sequelize.BOOLEAN
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

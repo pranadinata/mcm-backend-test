@@ -10,6 +10,8 @@ const authMiddleware = require('../middleware/auth');
 const authController = require('../services/auth.controller');
 const mahasiswaController = require('../services/mahasiswa.controller');
 const rencanaStudiController = require('../services/rencanaStudi.controller');
+const mataKuliahController = require('../services/mataKuliah.controller');
+
 
 
 
@@ -39,11 +41,17 @@ router.group('/rencana-studi', authMiddleware.verifyToken , function (route) {
   route.post('/create', inputValidator.rencana_studi_create , rencanaStudiController.create);
   route.post('/update', inputValidator.rencana_studi_update , rencanaStudiController.update);
   route.post('/delete', inputValidator.rencana_studi_delete , rencanaStudiController.destroy);
-  route.get('/detail/:id', inputValidator.rencana_studi_delete, rencanaStudiController.detail);
+  route.get('/detail/:id', inputValidator.rencana_studi_detail, rencanaStudiController.detail);
 });
 
 
-
+router.group('/mata-kuliah', authMiddleware.verifyToken , function (route) {
+  route.get('/list', mataKuliahController.index);
+  route.post('/create', inputValidator.mata_kuliah_create , mataKuliahController.create);
+  route.post('/update', inputValidator.mata_kuliah_update , mataKuliahController.update);
+  route.post('/delete', inputValidator.mata_kuliah_delete , mataKuliahController.destroy);
+  route.get('/detail/:id', inputValidator.mata_kuliah_detail, mataKuliahController.detail);
+});
 
 
 module.exports = router;
