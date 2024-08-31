@@ -62,12 +62,33 @@ const mahasiswa_update = [
 ];
 
 const mahasiswa_delete = [
-    check('mahasiswa_id').notEmpty().isUUID([4]).withMessage('Mahasiswa id haruus UUID dan tidak boleh kosong'),
+    check('mahasiswa_id').notEmpty().isUUID([4]).withMessage('Mahasiswa id harus UUID dan tidak boleh kosong'),
+    reporter
 ];
 
 const mahasiswa_detail = [
-    check('id').notEmpty().isUUID([4]).withMessage('Mahasiswa id haruus UUID dan tidak boleh kosong'),
+    check('id').notEmpty().isUUID([4]).withMessage('Mahasiswa id harus UUID dan tidak boleh kosong'),
     reporter
+];
+
+const rencana_studi_create = [
+    check('mahasiswa_id').notEmpty().isUUID([4]).withMessage('Mahasiswa id harus UUID dan tidak boleh kosong'),
+    check('matkul_id').notEmpty().isUUID([4]).withMessage('Mata kuliah id harus UUID dan tidak boleh kosong'),
+    reporter
+];
+
+const rencana_studi_update = [
+    check('rencana_studi_id').notEmpty().isUUID([4]).withMessage('Rencana studi id harus UUID dan tidak boleh kosong'),
+    check('matkul_id_tujuan').notEmpty().isUUID([4]).withMessage('Mata kuliah id tujuan harus UUID dan tidak boleh kosong'),
+    reporter
+];
+
+const rencana_studi_delete = [
+    check('rencana_studi_id').notEmpty().isUUID([4]).withMessage('Rencana studi id harus UUID dan tidak boleh kosong'),
+];
+
+const rencana_studi_detail = [
+    check('id').notEmpty().isUUID([4]).withMessage('Rencana studi id harus UUID dan tidak boleh kosong'),
 ];
 
 module.exports = {
@@ -76,5 +97,8 @@ module.exports = {
     mahasiswa_update,
     mahasiswa_delete,
     mahasiswa_detail,
-
+    rencana_studi_create,
+    rencana_studi_update,
+    rencana_studi_delete,
+    rencana_studi_detail,
 };

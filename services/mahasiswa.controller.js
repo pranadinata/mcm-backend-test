@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const { users, mahasiswa, rencana_studi } = require('../database/models');
+const { users, mahasiswa, rencana_studi, mata_kuliah } = require('../database/models');
 
 const globalFunc = require('../middleware/globalFunction');
 
@@ -20,6 +20,14 @@ async function index(req, res){
                 limit,
                 offset,
                 order,
+                include: [{
+                    model: rencana_studi,
+                    as: 'RencanaStudi',
+                    include:[{
+                        model: mata_kuliah,
+                        as: 'MataKuliah',
+                    }]
+                }]
             });
     
             // Menghitung jumlah halaman
@@ -33,9 +41,6 @@ async function index(req, res){
                 data: rows,
             });
         };
-
-       
-
     } catch (error) {
         res.status(500).send({message: 'Terjadi kesalahan pada server', error: error.message});
     }
@@ -214,7 +219,14 @@ function detail(req, res){
     try {
         const mahasiswa_id = req.params.id;
 
-        mahasiswa.findOne({ where: { id: mahasiswa_id }, include: [{ model: rencana_studi, as: 'RencanaStudi' }]}).then((result)=>{
+        mahasiswa.findOne({ where: { id: mahasiswa_id }, include: [{ 
+            model: rencana_studi, 
+            as: 'RencanaStudi',
+            include:[{
+                model: mata_kuliah,
+                as: 'MataKuliah',
+            }]
+         }]}).then((result)=>{
             if(result){
                 res.status(200).json({
                     data: {
