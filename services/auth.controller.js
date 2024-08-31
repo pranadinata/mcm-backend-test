@@ -13,8 +13,6 @@ function postLogin(req, res) {
         password
     } = req.body;
 
-
-
     users.findOne({
         where: {
             username: username
@@ -39,7 +37,7 @@ function postLogin(req, res) {
                     expiresIn: '1h'
                 });
 
-                UpdateOrCreate(token, user.get('id')).then(()=>{
+                UpdateOrCreate(token, user.get('id'), user.get('username')).then(()=>{
                     res.status(200).json({
                        data: {
                             status: 'success',
@@ -85,7 +83,7 @@ async function getLogout(req, res){
     }
 }
 
-function UpdateOrCreate(token, user_id){  
+function UpdateOrCreate(token, user_id, username){  
     return new Promise(async (resolve) =>{
         const cek_personal_tokens = await personal_access_token.findOne({
             where: { tokenable_id: user_id }
@@ -106,7 +104,7 @@ function UpdateOrCreate(token, user_id){
             personal_access_token.create({
                 tokenable_type: 'Bearer',
                 tokenable_id: user_id,
-                table_name: 'users',
+                name: username,
                 token: token,
                 expires_at: token_expires_at
             });

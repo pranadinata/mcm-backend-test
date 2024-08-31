@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     tokenable_type: DataTypes.STRING,
     tokenable_id: DataTypes.STRING,
-    table_name: DataTypes.STRING,
+    name: DataTypes.STRING,
     token: DataTypes.STRING,
     expires_at: DataTypes.DATE
   }, {

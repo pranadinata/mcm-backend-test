@@ -13,11 +13,68 @@ const reporter = (req, res, next) => {
 }
 
 const login_check = [
-    check('username').notEmpty().withMessage('Username is required'),
-    check('password').notEmpty().withMessage('Password is required'),  
+    check('username').notEmpty().withMessage('Username tidak boleh kosong').custom(value => {
+        // Memeriksa apakah string mengandung spasi
+        if (/\s/.test(value)) {
+            throw new Error('String tidak boleh mengandung spasi');
+        }
+        return true;
+    }),
+    check('password').notEmpty().withMessage('Password tidak boleh kosong'),  
     reporter
-]
+];
+
+const mahasiswa_create = [
+    check('username').notEmpty().withMessage('Username tidak boleh kosong').custom(value => {
+        // Memeriksa apakah string mengandung spasi
+        if (/\s/.test(value)) {
+            throw new Error('String tidak boleh mengandung spasi');
+        }
+        return true;
+    }),
+    check('password').notEmpty().withMessage('Password tidak boleh kosong'),
+    check('role_id').notEmpty().isInt().isLength({ max: 1 }).withMessage('Role harus integer dan tidak lebih dari satu karakter'),
+    check('nama_lengkap').notEmpty().isString().isLength({ max: 100 }).withMessage('Nama lengkap harus diisi string dan tidak boleh lebih dari 100 karakter'),
+    check('nim').notEmpty().isInt().isLength({ max: 6, min: 6 }).withMessage('Nim harus diisi dengan 6 digit angka'),
+    check('jurusan').notEmpty().isString().isLength({ max: 100 }).withMessage('Jurusan harus berisi string dan tidak boleh lebih dari 100 karakter'),
+    check('alamat').notEmpty().isString().isLength({ max: 300 }).withMessage('Alamat harus berisi string dan tidak boleh lebih dari 300 karakter'),
+    check('semester').notEmpty().isInt().isLength({ min:4, max: 4 }).withMessage('Semester harus diisi dengan 4 digit angka'),
+    reporter 
+];
+
+const mahasiswa_update = [
+
+    check('mahasiswa_id').notEmpty().isUUID([4]).withMessage('Mahasiswa id haruus UUID dan tidak boleh kosong'),
+    check('username').notEmpty().withMessage('Username tidak boleh kosong').custom(value => {
+        // Memeriksa apakah string mengandung spasi
+        if (/\s/.test(value)) {
+            throw new Error('String tidak boleh mengandung spasi');
+        }
+        return true;
+    }),
+
+    check('nama_lengkap').notEmpty().isString().isLength({ max: 100 }).withMessage('Nama lengkap harus diisi string dan tidak boleh lebih dari 100 karakter'),
+    check('nim').notEmpty().isInt().isLength({ max: 6, min: 6 }).withMessage('Nim harus diisi dengan 6 digit angka'),
+    check('jurusan').notEmpty().isString().isLength({ max: 100 }).withMessage('Jurusan harus berisi string dan tidak boleh lebih dari 100 karakter'),
+    check('alamat').notEmpty().isString().isLength({ max: 300 }).withMessage('Alamat harus berisi string dan tidak boleh lebih dari 300 karakter'),
+    check('semester').notEmpty().isInt().isLength({ min:4, max: 4 }).withMessage('Semester harus diisi dengan 4 digit angka'),
+    reporter 
+];
+
+const mahasiswa_delete = [
+    check('mahasiswa_id').notEmpty().isUUID([4]).withMessage('Mahasiswa id haruus UUID dan tidak boleh kosong'),
+];
+
+const mahasiswa_detail = [
+    check('id').notEmpty().isUUID([4]).withMessage('Mahasiswa id haruus UUID dan tidak boleh kosong'),
+    reporter
+];
 
 module.exports = {
-    login_check
+    login_check,
+    mahasiswa_create,
+    mahasiswa_update,
+    mahasiswa_delete,
+    mahasiswa_detail,
+
 };

@@ -15,7 +15,7 @@ module.exports = {
       tokenable_id: {
         type: Sequelize.STRING
       },
-      table_name: {
+      name: {
         type: Sequelize.STRING
       },
       token: {

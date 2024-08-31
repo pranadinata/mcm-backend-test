@@ -18,8 +18,9 @@ module.exports = {
       role_id: {
         type: Sequelize.INTEGER
       },
-      nim_id: {
-        type: Sequelize.INTEGER
+      mahasiswa_id: {
+        type: Sequelize.UUID,
+        allowNull: true,
       },
       createdAt: {
         allowNull: false,
