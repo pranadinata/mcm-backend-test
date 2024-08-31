@@ -80,7 +80,7 @@ async function getLogout(req, res){
             }
         }).then(()=>{
                 res.clearCookie('token'); // Clear the 'token' cookie
-                res.redirect('/');
+                res.status(200).json('berhasil logout!!');
         });
     }
 }
@@ -111,9 +111,6 @@ function UpdateOrCreate(token, user_id){
                 expires_at: token_expires_at
             });
         }
-
-        res.status(200).json('berhasil logout!!');
-        
         resolve();
     });
 }

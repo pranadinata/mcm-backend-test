@@ -2,7 +2,10 @@ require('express-router-group');
 var express = require('express');
 var router = express.Router();
 
+//middleware
 const authValidator = require('../middleware/validator');
+const authMiddleware = require('../middleware/auth');
+
 
 const authController = require('../services/auth.controller');
 const mahasiswaController = require('../services/mahasiswa.controller');
@@ -21,7 +24,7 @@ router.group('/auth', function (route) {
 });
 
 
-router.group('/mahasiswa', function (route) {
+router.group('/mahasiswa', authMiddleware.verifyToken , function (route) {
   route.get('/list', mahasiswaController.index);
 });
 
