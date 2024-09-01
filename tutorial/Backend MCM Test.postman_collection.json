@@ -1,0 +1,720 @@
+{
+	"info": {
+		"_postman_id": "3d1bcdcd-bf66-446c-ac28-050450997ef6",
+		"name": "Backend MCM Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26064758",
+		"_collection_link": ""
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_backend_express}}/auth/login",
+							"host": [
+								"{{base_url_backend_express}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_url_backend_express}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_backend_express}}/auth/logout",
+							"host": [
+								"{{base_url_backend_express}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mahasiswa",
+			"item": [
+				{
+					"name": "LIst",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_url_backend_express}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_backend_express}}/mahasiswa/list?page=1&size=5",
+							"host": [
+								"{{base_url_backend_express}}"
+							],
+							"path": [
+								"mahasiswa",
+								"list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_url_backend_express}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_backend_express}}/mahasiswa/detail/dda42671-3685-49c5-92c5-c7c4ea5230cd",
+							"host": [
+								"{{base_url_backend_express}}"
+							],
+							"path": [
+								"mahasiswa",
+								"detail",
+								"dda42671-3685-49c5-92c5-c7c4ea5230cd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_url_backend_express}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "mahasiswa11",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "text"
+								},
+								{
+									"key": "role_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "nama_lengkap",
+									"value": "Mahasiswa sebelas",
+									"type": "text"
+								},
+								{
+									"key": "nim",
+									"value": "120111",
+									"type": "text"
+								},
+								{
+									"key": "jurusan",
+									"value": "Teknik Mesin",
+									"type": "text"
+								},
+								{
+									"key": "alamat",
+									"value": "Alamat 1",
+									"type": "text"
+								},
+								{
+									"key": "semester",
+									"value": "2015",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_backend_express}}/mahasiswa/create",
+							"host": [
+								"{{base_url_backend_express}}"
+							],
+							"path": [
+								"mahasiswa",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_url_backend_express}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "mahasiswa_id",
+									"value": "4f9fd6ab-fbab-4f97-9e9e-c58dc32c99a1",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "mahasiswa122",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin12345",
+									"type": "text"
+								},
+								{
+									"key": "nama_lengkap",
+									"value": "Mahasiswa duabelas",
+									"type": "text"
+								},
+								{
+									"key": "nim",
+									"value": "120112",
+									"type": "text"
+								},
+								{
+									"key": "jurusan",
+									"value": "Teknik Mesin",
+									"type": "text"
+								},
+								{
+									"key": "alamat",
+									"value": "Alamat 1",
+									"type": "text"
+								},
+								{
+									"key": "semester",
+									"value": "2015",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_backend_express}}/mahasiswa/update",
+							"host": [
+								"{{base_url_backend_express}}"
+							],
+							"path": [
+								"mahasiswa",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_url_backend_express}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "mahasiswa_id",
+									"value": "1dafcfb4-e82c-439e-9f2a-28cc7ec6f7fc",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_backend_express}}/mahasiswa/delete",
+							"host": [
+								"{{base_url_backend_express}}"
+							],
+							"path": [
+								"mahasiswa",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rencana Studi",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_url_backend_express}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_backend_express}}/rencana-studi/list?page=1&size=5",
+							"host": [
+								"{{base_url_backend_express}}"
+							],
+							"path": [
+								"rencana-studi",
+								"list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_url_backend_express}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_backend_express}}/rencana-studi/detail/f68695f6-1ee2-431d-ba0f-51803a1a7545",
+							"host": [
+								"{{base_url_backend_express}}"
+							],
+							"path": [
+								"rencana-studi",
+								"detail",
+								"f68695f6-1ee2-431d-ba0f-51803a1a7545"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_url_backend_express}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "mahasiswa_id",
+									"value": "0d06ca15-355a-4338-b357-c5d2e826939e",
+									"type": "text"
+								},
+								{
+									"key": "matkul_id",
+									"value": "3fe767e9-11d5-4606-85db-110c85449bb3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_backend_express}}/rencana-studi/create",
+							"host": [
+								"{{base_url_backend_express}}"
+							],
+							"path": [
+								"rencana-studi",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_url_backend_express}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "rencana_studi_id",
+									"value": "5a03c8f1-5361-402e-bf55-cb737482c74b",
+									"type": "text"
+								},
+								{
+									"key": "matkul_id_tujuan",
+									"value": "a69a68a0-6183-4303-8e60-409b65cc2b82",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_backend_express}}/rencana-studi/update",
+							"host": [
+								"{{base_url_backend_express}}"
+							],
+							"path": [
+								"rencana-studi",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_url_backend_express}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "rencana_studi_id",
+									"value": "5a03c8f1-5361-402e-bf55-cb737482c74b",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_backend_express}}/rencana-studi/delete",
+							"host": [
+								"{{base_url_backend_express}}"
+							],
+							"path": [
+								"rencana-studi",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mata Kuliah",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_url_backend_express}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_backend_express}}/mata-kuliah/list?page=1&size=5",
+							"host": [
+								"{{base_url_backend_express}}"
+							],
+							"path": [
+								"mata-kuliah",
+								"list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_url_backend_express}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nama_matkul",
+									"value": "Teknik GeoFisika",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_backend_express}}/mata-kuliah/create",
+							"host": [
+								"{{base_url_backend_express}}"
+							],
+							"path": [
+								"mata-kuliah",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_url_backend_express}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "matkul_id",
+									"value": "c0698cdd-7ae3-45bb-ad7f-7971a1c0a8a4",
+									"type": "text"
+								},
+								{
+									"key": "nama_matkul",
+									"value": "Teknik GeoFisika Aja",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_backend_express}}/mata-kuliah/update",
+							"host": [
+								"{{base_url_backend_express}}"
+							],
+							"path": [
+								"mata-kuliah",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_url_backend_express}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "matkul_id",
+									"value": "c0698cdd-7ae3-45bb-ad7f-7971a1c0a8a4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url_backend_express}}/mata-kuliah/delete",
+							"host": [
+								"{{base_url_backend_express}}"
+							],
+							"path": [
+								"mata-kuliah",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token_url_backend_express}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_backend_express}}/mata-kuliah/detail/3282116b-3d39-4587-ba3b-13f84b0ee531",
+							"host": [
+								"{{base_url_backend_express}}"
+							],
+							"path": [
+								"mata-kuliah",
+								"detail",
+								"3282116b-3d39-4587-ba3b-13f84b0ee531"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
